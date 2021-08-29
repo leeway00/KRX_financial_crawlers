@@ -141,3 +141,5 @@ cython_debug/
 # file
 *.csv
 .DS_Store
+hiroku.py
+sp500_data
