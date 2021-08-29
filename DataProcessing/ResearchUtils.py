@@ -1,7 +1,11 @@
+#%%
 import pandas as pd
 import numpy as np
-import OpenDartReader
+import sys
 
+sys.path.append('..')
+
+#%%
 class FindTickers:
     """
     # keywords
@@ -46,16 +50,26 @@ class FindTickers:
             self.tickers = pd.Series(data)
 
 
-    def search(self, keyword:'str or int'):
+    def search(data, cols, keyword:'str or int'):
         if type(keyword) == str:
-            nominees = self.names[np.char.find(self.names, keyword) != -1]
+            nominees = data[cols][np.char.find(data[cols], keyword) != -1]
         else:
             nominees = (self.tickers == keyword)
         if len(nominees) == 0: 
             return 'Nothing returned'
-        return self.tickers[nominees]
+        return data[nominees]
+
+# %%
+tickers = pd.read_csv('krx_tickers.csv')
+# %%
+def find_value(col, args):
+    return tickers[tickers[col].isin([args])]
+#%%
+find_value('name','코윈테크')
 
 
 
+
+#%%
 if __name__ == '__main__':
     pass

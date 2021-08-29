@@ -109,18 +109,18 @@ class CrossCorr:
         return np.array(res)
 
 
-        def plot(self, figsize = (5,5)):
-            cc = self.cc2d
-            delay = np.shape(cc)//2
+    def plot(self, figsize = (5,5)):
+        cc = self.cc2d
+        delay = np.shape(cc)//2
 
-            plt.figure(figsize = figsize)
-            for i in cc:
-                plt.plot([i for i in range(-1*delay,delay+1)],i)
-            plt.legend(tem.columns.to_list())
-            plt.ylabel('Cross-Correlation with repect to close_price pct change')
-            plt.xlabel('Delay')
-            plt.show()
-            pass
+        plt.figure(figsize = figsize)
+        for i in cc:
+            plt.plot([i for i in range(-1*delay,delay+1)],i)
+        plt.legend(tem.columns.to_list())
+        plt.ylabel('Cross-Correlation with repect to close_price pct change')
+        plt.xlabel('Delay')
+        plt.show()
+        pass
 
 if __name__ == '__main__':
     pass
