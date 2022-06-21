@@ -143,3 +143,4 @@ cython_debug/
 .DS_Store
 hiroku.py
 sp500_data
+*.xml

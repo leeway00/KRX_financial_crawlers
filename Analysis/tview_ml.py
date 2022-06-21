@@ -5,5 +5,12 @@ import sys
 sys.path.append('..')
 
 # %%
-tview = pd.read_csv('../tview0823.csv')
+tview = pd.read_csv('../Korea_data/krx_marekt/tview0823.csv')
 
+
+# %%
+tview
+# %%
+import os
+
+# %%

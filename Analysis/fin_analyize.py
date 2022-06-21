@@ -5,7 +5,7 @@ import sys
 
 import os
 os.chdir('..')
-# %%
+
 recent = pd.read_csv('./Korea_data/krx_fin/quarter_fin.csv')
 # %%
 temp = recent[recent.date == '2021.06'].iloc[:,:-3].dropna().reset_index(drop = True)
@@ -33,4 +33,8 @@ temp2.sort_values(by = 'score', ascending = False, inplace = True)
 temp3 = temp2[['ticker','name','date','영업이익률','순이익률','ROE(지배주주)','부채비율','PER(배)','PBR(배)','score']].copy()
 # %%
 
+# %%
+price = pd.read_csv('./Korea_data/krx_market/krx_marketdata.csv')
+# %%
+price
 # %%
